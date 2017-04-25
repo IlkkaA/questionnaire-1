@@ -76,10 +76,11 @@ PAGE CONTENT
 #main-title {
   font-size: 150px;
   text-transform: uppercase;
+  text-align: center;
   padding: 25% 0 15% 0;
 }
 
-.q-div h1 {
+.q-title {
   font-size: 70px;
   text-align: center;
   font-weight: 200;
@@ -87,6 +88,11 @@ PAGE CONTENT
 
 .q-val-div ul li {
   list-style: none;
+}
+
+.q-div {
+  height: 1100px;
+  /*border: 1px solid green;*/
 }
 
 /*
@@ -189,7 +195,7 @@ BUTTON STYLES
 
 .btn-div {
   width: 100%;
-  margin: 90px auto;
+  margin: 0 auto;
   /*border: 1px solid green;*/
 }
 

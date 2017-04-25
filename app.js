@@ -2,63 +2,44 @@ var routerApp = angular.module('routerApp', ['ui.router']);
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/start');
-    
-    $stateProvider
-        
-      // START PAGE =================================
-      .state('start', {
-          url: '/start',
-          templateUrl: 'start.html',
-          controller: function($scope) {
-          }
+  $urlRouterProvider.otherwise('/start');
 
+  $stateProvider
 
-      })
-    
-    
-      // QUESTIONNAIRE FORM ========================================
-      .state('questionnaire', {
-          url: '/questionnaire',
-          templateUrl: 'questionnaire.html'
-      })
+  // START PAGE =================================
+  .state('start', {
+    url: '/start',
+    templateUrl: 'start.html'
+  })
 
-      // nested list with custom controller
-      .state('questionnaire.list', {
-          url: '/list',
-          templateUrl: 'partial-home-list.html',
-          controller: function($scope) {
-              $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
-          }
-      })
+  // QUESTIONNAIRE FORM ========================================
+  .state('questionnaire', {
+    url: '/questionnaire',
+    templateUrl: 'questionnaire.html',
+    controller: 'mainController'
+  })
 
-      // nested list with just some random string data
-      .state('questionnaire.paragraph', {
-          url: '/paragraph',
-          template: 'I could sure use a drink right now.'
-      })
+  // nested list with custom controller
+  .state('questionnaire.question-1', {
+      url: '/question-1',
+      templateUrl: 'question-1.html',
+  })
 
-      ;
+  .state('questionnaire.question-2', {
+      url: '/question-2',
+      templateUrl: 'question-2.html',
+  })
+  
+  .state('questionnaire.question-3', {
+        url: '/question-3',
+        templateUrl: 'question-3.html',
+  })
+
+    ;
         
 });
 
-routerApp.controller('scotchController', function($scope) {
-    
-    $scope.message = 'test';
-   
-    $scope.scotches = [
-        {
-            name: 'Macallan 12',
-            price: 50
-        },
-        {
-            name: 'Chivas Regal Royal Salute',
-            price: 10000
-        },
-        {
-            name: 'Glenfiddich 1937',
-            price: 20000
-        }
-    ];
-    
+routerApp.controller('mainController', function($scope) {   
 });
+
+
